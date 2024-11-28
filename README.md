@@ -16,6 +16,7 @@ Secure your mariadb-installation
 mysql_secure_installation
 ```
 
+## Database
 Create the database
 ```puppet
 mysql -u root -p
@@ -38,12 +39,21 @@ cd template-generator
 mysql -u username -p template < dump.sql
 ```
 
-## Create the database
-
-
-## Import the database
-```puppet
-mysql -u username -p template-generator < dump.sql
-```
-
 ## Configure NGINX
+```puppet
+server {
+        listen 80;
+        root /var/www/template-generator;
+
+        index index.php
+        server_name _;
+
+        location / {
+            try_files $uri $uri/ =404;
+        }
+        location ~ \.php$ {
+            include snippets/fastcgi-php.conf;
+            fastcgi_pass unix:/run/php/php8.2-fpm.sock;
+        }
+}
+```
