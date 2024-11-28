@@ -8,16 +8,38 @@ Install the required packages
 ```puppet
 sudo apt update
 sudp apt upgrade
-sudo apt install nginx mariadb-server mariadb-client
+sudo apt install nginx mariadb-server mariadb-client git
 ```
-## Create the database
+
+Secure your mariadb-installation
+```puppet
+mysql_secure_installation
+```
+
+Create the database
 ```puppet
 mysql -u root -p
-MariaDB [(none)]> CREATE DATABASE template-generator;
-MariaDB [(none)]> CREATE USER 'template-generator'@'localhost' IDENTIFIED BY 'password';
-MariaDB [(none)]> GRANT ALL PRIVILEGES ON template-generator.* TO 'template-generator'@'localhost' WITH GRANT OPTION;
+MariaDB [(none)]> CREATE DATABASE template;
+MariaDB [(none)]> CREATE USER 'template'@'localhost' IDENTIFIED BY 'password';
+MariaDB [(none)]> GRANT ALL PRIVILEGES ON template.* TO 'template'@'localhost' WITH GRANT OPTION;
 MariaDB [(none)]> FLUSH PRIVILEGES;
+MariaDB [(none)]> exit
 ```
+
+Download template-generator
+```puppet
+cd /var/www
+git clone https://github.com/TheJojje/template-generator
+```
+
+Enter the catalog to import database
+```puppet
+cd template-generator
+mysql -u username -p template < dump.sql
+```
+
+## Create the database
+
 
 ## Import the database
 ```puppet
