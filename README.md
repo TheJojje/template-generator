@@ -5,5 +5,5 @@ It comes with user and group-management so that you can have multiple users/grou
 ## Installation
 
 ```puppet
-include modules
+sudo apt install nginx mariadb-server mariadb-client
 ```
