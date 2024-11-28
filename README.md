@@ -63,7 +63,7 @@ Restart NGINX
 You should now be able to login to the system via http://<IP>:80.
 
 There are two default accounts
-admin/password (Site-Admin)
+admin/password (Site-Admin)<br>
 user/password (Default tenant)
 
 Enjoy!
