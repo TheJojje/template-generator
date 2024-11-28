@@ -8,7 +8,7 @@ Install the required packages
 ```puppet
 sudo apt update
 sudp apt upgrade
-sudo apt install nginx mariadb-server mariadb-client git
+sudo apt install nginx mariadb-server mariadb-client git php-fpm php-mysql
 ```
 
 Secure your mariadb-installation
@@ -53,7 +53,17 @@ server {
         }
         location ~ \.php$ {
             include snippets/fastcgi-php.conf;
-            fastcgi_pass unix:/run/php/php8.2-fpm.sock;
+            fastcgi_pass unix:/run/php/php8.1-fpm.sock;
         }
 }
 ```
+Restart NGINX
+
+## Access
+You should now be able to login to the system via http://<IP>:80.
+
+There are two default accounts
+admin/password (Site-Admin)
+user/password (Default tenant)
+
+Enjoy!
