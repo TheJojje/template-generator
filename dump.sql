@@ -1,6 +1,6 @@
 -- MariaDB dump 10.19  Distrib 10.11.3-MariaDB, for debian-linux-gnueabihf (armv7l)
 --
--- Host: localhost    Database: template-generator
+-- Host: localhost    Database: template
 -- ------------------------------------------------------
 -- Server version	10.11.3-MariaDB-1+rpi1
 
@@ -16,12 +16,12 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Current Database: `template-generator`
+-- Current Database: `template`
 --
 
-CREATE DATABASE /*!32312 IF NOT EXISTS*/ `template-generator` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci */;
+CREATE DATABASE /*!32312 IF NOT EXISTS*/ `template` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci */;
 
-USE `template-generator`;
+USE `template`;
 
 --
 -- Table structure for table `access_groups`
