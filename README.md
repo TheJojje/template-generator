@@ -6,6 +6,8 @@ It comes with user and group-management so that you can have multiple users/grou
 
 Install the required packages
 ```puppet
+sudo apt update
+sudp apt upgrade
 sudo apt install nginx mariadb-server mariadb-client
 ```
 ## Create the database
